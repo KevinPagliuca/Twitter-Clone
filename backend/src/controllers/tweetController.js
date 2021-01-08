@@ -1,9 +1,5 @@
 const connection = require('../database/connection');
 
-const bcrypt = require('bcrypt');
-
-var DateNow = new Date();
-
 module.exports = {
 
     async index(request, response) {
@@ -17,7 +13,7 @@ module.exports = {
 
     async create(request, response) {
         const { text } = request.body;
-        const user_id = request.headers.id;
+        const user_id = request.headers.user_id;
         const user_name = request.headers.name;
         const user_email = request.headers.email;
 
@@ -36,6 +32,16 @@ module.exports = {
     },
 
     async show(request, response) {
+        const user_id = request.headers.user_id;
 
+        const myTweets = await connection('tweets')
+            .select('*')
+            .where('user_id', user_id);
+
+        if (myTweets) {
+            response.status(200).json(myTweets);
+        } else {
+            response.status(200).json({ Alert: 'Nenhum usuário cadastrado no sistema' });
+        }
     }
 }
