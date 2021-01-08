@@ -1,0 +1,35 @@
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #039ff5;
+    border: 2px solid transparent;
+    border-radius: 9999px;
+    color: #fff;
+    font-size: 18px;
+    font-family: Roboto;
+}
+
+.button-container button:hover {
+    background-color: #1A91DA;
+    transition: background-color .4s;
+}
+
+.button-container .box {
+    border: 3px solid #fff;
+    font: 600 22px Roboto
+}
+.button-container .box:hover {
+    background-color: #fff;
+    color: #1A91DA;
+    transition: color .4s;
+}

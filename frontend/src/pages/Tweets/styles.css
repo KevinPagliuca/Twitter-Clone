@@ -1,0 +1,86 @@
+#tweets {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#tweets .sidebar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 220px;
+    min-height: 100vh;
+    height: 100%;
+    background-color: #039ff5;
+    padding: 20px;
+    color: #fff;
+    border-right: 1px solid #fff;
+    position: fixed;
+    overflow-x: hidden;
+}
+
+#tweets .sidebar .user-name h3 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Roboto;
+}
+
+#tweets .sidebar .user-name>div {
+    margin-top: 20px;
+}
+
+#tweets .container {
+    margin-left: 220px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}
+
+#tweets .container .page-name {
+    width: 100%;
+    font: 600 24px Roboto;
+}
+
+#tweets .container .tweetar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#tweets .container .feed {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#tweets .container .feed h2 {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: Roboto;
+    margin-bottom: 30px;
+}
+
+#tweets .container .feed .content {
+    padding: 20px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#tweets .container .feed .content header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#tweets .container .feed .content p {
+    margin-bottom: 20px;
+}

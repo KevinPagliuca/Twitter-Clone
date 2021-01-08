@@ -1,0 +1,31 @@
+.textarea-block {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.textarea-block textarea {    
+    padding: 20px 30px 50px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    width: 100%;
+    min-height: 150px;
+    font: 400 18px Roboto;
+    resize: vertical;
+    text-align: justify;
+    background: #f0f0f0;
+}
+
+.textarea-block textarea:focus {
+    border: 2px solid #039ff5;
+}
+
+.textarea-block .button-container {
+    width: 200px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
