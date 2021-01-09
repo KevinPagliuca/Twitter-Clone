@@ -13,6 +13,7 @@ Routes.get('/listar', UserController.index); // Listar usuários.
 Routes.post('/createTweet', TweetController.create); // Criar um Tweet.
 Routes.get('/tweets', TweetController.index); // Listar todos os Tweets.
 Routes.get('/myTweets', TweetController.show); // Listar Tweets de um usuário especifico.
+Routes.get('/networkTweets', TweetController.networkTweets); // Listar Tweets de usuários que estão sendo seguidos.
 
 Routes.get('/following', followerController.following); // Quem estou seguindo.
 Routes.get('/getfollower', followerController.followers); // Quem me segue.

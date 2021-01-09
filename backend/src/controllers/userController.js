@@ -34,9 +34,9 @@ module.exports = {
                 created_at: DateNow,
                 updated_at: DateNow
             });
-            response.status(200).json({ Sucesso: "Usuário criado com sucesso!" })
+            return response.status(200).json({ Sucesso: "Usuário criado com sucesso!", id: insertUser });
         } else {
-            response.status(404).json({ Erro: "E-mail já cadastrado!" })
+            return response.status(404).json({ Erro: "E-mail já cadastrado!" })
         }
     },
 

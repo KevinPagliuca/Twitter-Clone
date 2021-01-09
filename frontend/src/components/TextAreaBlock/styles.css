@@ -16,7 +16,6 @@
     font: 400 18px Roboto;
     resize: vertical;
     text-align: justify;
-    background: #f0f0f0;
 }
 
 .textarea-block textarea:focus {

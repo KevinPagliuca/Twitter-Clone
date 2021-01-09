@@ -1,5 +1,3 @@
-const { json } = require('express');
-const { count, distinct } = require('../database/connection');
 const connection = require('../database/connection');
 
 module.exports = {
@@ -7,38 +5,29 @@ module.exports = {
         const user_id = request.headers.user_id;
 
         const following = await connection('followers')
-            .select('user_id_follower')
-            .where('user_id', user_id);
-
-        const [count] = await connection('followers')
-            .count()
-            .where('user_id', user_id);
-
-        const serializedFollowing = [
-            ...following,
-            count
-        ]
+            .select('follow_id_user')
+            .where('user_id', user_id); 
 
         if (following) {
-            return response.status(200).json(serializedFollowing);
+            return response.status(200).json(following);
         }
     },
 
     async create(request, response) {
         const user_id = request.headers.user_id;
 
-        const { user_id_follower } = request.body;
+        const { follow_id_user } = request.body;
 
         const exists = await connection('followers')
             .select('*')
             .where('user_id', user_id)
-            .where('user_id_follower', user_id_follower)
+            .where('follow_id_user', follow_id_user)
             .first();
 
         if (!exists) {
             const setFollower = await connection('followers').insert({
                 user_id,
-                user_id_follower
+                follow_id_user
             });
             return response.status(200).json(setFollower);
         } else {
@@ -51,7 +40,7 @@ module.exports = {
 
         const followers = await connection('followers')
         .select('*')
-        .where('user_id_follower', user_id);
+        .where('follow_id_user', user_id);
 
         if (followers) {
             return response.status(200).json(followers);

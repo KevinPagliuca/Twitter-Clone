@@ -13,9 +13,9 @@
     min-height: 100vh;
     background-color: #039ff5;
     background-image: url('../../assets/twitter.svg');
-    background-position: center;
+    background-position: 0 50%;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 1200px;
 }
 
 .right-side {

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import Button from '../../components/Button';
 import TextAreaBlock from '../../components/TextAreaBlock';
 
 import './styles.css';
 
+import api from '../../services/api';
+
 export default function Tweets() {
+    const [tweets, setTweets] = useState([]);    
+
     return (
         <div id="tweets">
 
